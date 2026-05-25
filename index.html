@@ -29,136 +29,40 @@
     
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Hero Image with CSS */
-        .hero-image {
+        /* Hero Image SVG */
+        .hero-image svg {
             width: 100%;
             max-width: 600px;
             height: 300px;
             margin-bottom: 2rem;
             border-radius: 8px;
-            overflow: hidden;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-            background: linear-gradient(135deg, #FFE0EC 0%, #FFC0CB 50%, #FF69B4 100%);
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: block;
         }
 
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle at 30% 30%, #FF1493, #C71585);
-            border-radius: 50%;
-            top: 20%;
-            left: 25%;
-            box-shadow: 0 10px 25px rgba(199, 21, 133, 0.4);
-        }
-
-        .hero-image::after {
-            content: '🍓 🍓 🍓';
-            position: absolute;
-            font-size: 4rem;
-            z-index: 2;
-        }
-
-        /* Product Images */
-        .product-image {
-            background: linear-gradient(135deg, #FFE0EC 0%, #FFC0CB 100%);
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 250px;
-        }
-
-        .product-image::before {
-            content: '';
-            position: absolute;
-            width: 80%;
-            height: 80%;
-            background: radial-gradient(circle at 40% 40%, #FF1493, #C71585);
-            border-radius: 50%;
-            opacity: 0.9;
-        }
-
-        .product-image::after {
-            content: '🍓';
-            position: absolute;
-            font-size: 5rem;
-            z-index: 2;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
-        }
-
-        /* Story Image */
-        .story-image {
-            background: linear-gradient(180deg, #90EE90 0%, #7CFC00 50%, #32CD32 100%);
-            border-radius: 8px;
-            overflow: hidden;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 300px;
-        }
-
-        .story-image::before {
-            content: '';
-            position: absolute;
+        /* Product Image SVG */
+        .product-image svg {
             width: 100%;
-            height: 100%;
-            background: 
-                repeating-linear-gradient(90deg, transparent 0, transparent 40px, rgba(255,255,255,0.1) 40px, rgba(255,255,255,0.1) 80px),
-                repeating-linear-gradient(0deg, transparent 0, transparent 50px, rgba(0,0,0,0.05) 50px, rgba(0,0,0,0.05) 100px);
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
         }
 
-        .story-image::after {
-            content: '🌾 🍓 🌾';
-            position: absolute;
-            font-size: 4rem;
-            z-index: 2;
-            text-align: center;
-            letter-spacing: 1rem;
+        /* Story Image SVG */
+        .story-image svg {
+            width: 100%;
+            height: 300px;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
         }
 
-        /* Featured Product Highlight */
-        .product-card.featured .product-image {
-            position: relative;
-            animation: pulse 2s ease-in-out infinite;
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .hero-image {
-                height: 250px;
-            }
-
-            .hero-image::before {
-                width: 120px;
-                height: 120px;
-            }
-
-            .product-image::after {
-                font-size: 3rem;
-            }
-
-            .story-image::after {
-                font-size: 3rem;
-                letter-spacing: 0.5rem;
-            }
+        .product-card.featured svg {
+            animation: bounce 2s ease-in-out infinite;
         }
     </style>
 </head>
@@ -187,7 +91,38 @@
         <div class="hero-content">
             <h1 class="hero-title">給孩子最天然的健康選擇</h1>
             <p class="hero-subtitle">苗栗大湖鄉新鮮無農藥草莓 | 100% 產地透明 | 安心直送到家</p>
-            <div class="hero-image"></div>
+            <div class="hero-image">
+                <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background gradient -->
+                    <defs>
+                        <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#FFE0EC;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#FFC0CB;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:1" />
+                        </linearGradient>
+                        <radialGradient id="strawberry1" cx="35%" cy="35%">
+                            <stop offset="0%" style="stop-color:#FF4081;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#C71585;stop-opacity:1" />
+                        </radialGradient>
+                    </defs>
+                    <rect width="800" height="400" fill="url(#heroGradient)"/>
+                    
+                    <!-- Strawberry 1 -->
+                    <circle cx="200" cy="150" r="80" fill="url(#strawberry1)" filter="drop-shadow(0 10px 20px rgba(0,0,0,0.2))"/>
+                    <path d="M 170 70 Q 160 50 170 40 Q 180 35 190 45 Q 200 30 210 40 Q 220 50 210 70 Z" fill="#2D5016"/>
+                    
+                    <!-- Strawberry 2 -->
+                    <circle cx="500" cy="180" r="90" fill="url(#strawberry1)" filter="drop-shadow(0 10px 20px rgba(0,0,0,0.2))"/>
+                    <path d="M 465 85 Q 455 65 465 55 Q 475 50 485 60 Q 495 45 505 55 Q 515 65 505 85 Z" fill="#2D5016"/>
+                    
+                    <!-- Strawberry 3 -->
+                    <circle cx="650" cy="120" r="70" fill="url(#strawberry1)" filter="drop-shadow(0 10px 20px rgba(0,0,0,0.2))"/>
+                    <path d="M 625 45 Q 615 25 625 15 Q 635 10 645 20 Q 655 5 665 15 Q 675 25 665 45 Z" fill="#2D5016"/>
+                    
+                    <!-- Decorative text -->
+                    <text x="400" y="350" font-size="48" text-anchor="middle" fill="#C71585" font-weight="bold" opacity="0.3">新鮮採收</text>
+                </svg>
+            </div>
             <a href="#products" class="cta-button primary" data-event="hero_cta">探索我們的草莓</a>
         </div>
     </section>
@@ -266,7 +201,24 @@
             <h2>我們的草莓商品</h2>
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="product1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFE0EC;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FFC0CB;stop-opacity:1" />
+                                </linearGradient>
+                                <radialGradient id="berry1">
+                                    <stop offset="0%" style="stop-color:#FF4081;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#C71585;stop-opacity:1" />
+                                </radialGradient>
+                            </defs>
+                            <rect width="400" height="300" fill="url(#product1Grad)"/>
+                            <circle cx="200" cy="150" r="70" fill="url(#berry1)" filter="drop-shadow(0 8px 15px rgba(0,0,0,0.2))"/>
+                            <path d="M 175 80 Q 168 65 175 58 Q 182 55 188 65 Q 195 50 202 58 Q 209 65 202 80 Z" fill="#2D5016"/>
+                            <text x="200" y="280" font-size="32" text-anchor="middle" fill="#C71585" font-weight="bold" opacity="0.5">300g</text>
+                        </svg>
+                    </div>
                     <div class="product-info">
                         <h3>🍓 鮮採新鮮草莓禮盒</h3>
                         <p class="product-spec">300g 新鮮草莓</p>
@@ -286,7 +238,26 @@
 
                 <div class="product-card featured">
                     <div class="badge">暢銷推薦</div>
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="product2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFE0EC;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FFC0CB;stop-opacity:1" />
+                                </linearGradient>
+                                <radialGradient id="berry2">
+                                    <stop offset="0%" style="stop-color:#FF4081;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#C71585;stop-opacity:1" />
+                                </radialGradient>
+                            </defs>
+                            <rect width="400" height="300" fill="url(#product2Grad)"/>
+                            <circle cx="150" cy="120" r="60" fill="url(#berry2)" filter="drop-shadow(0 8px 15px rgba(0,0,0,0.2))"/>
+                            <path d="M 130 60 Q 125 48 130 42 Q 136 40 141 49 Q 147 35 152 42 Q 158 48 152 60 Z" fill="#2D5016"/>
+                            <circle cx="270" cy="160" r="65" fill="url(#berry2)" filter="drop-shadow(0 8px 15px rgba(0,0,0,0.2))"/>
+                            <path d="M 248 95 Q 242 80 248 73 Q 254 70 260 80 Q 267 63 273 73 Q 279 80 273 95 Z" fill="#2D5016"/>
+                            <text x="200" y="280" font-size="32" text-anchor="middle" fill="#C71585" font-weight="bold" opacity="0.5">600g</text>
+                        </svg>
+                    </div>
                     <div class="product-info">
                         <h3>👨‍👩‍👧‍👦 家庭優惠組合</h3>
                         <p class="product-spec">600g 新鮮草莓</p>
@@ -306,9 +277,26 @@
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image"></div>
+                    <div class="product-image">
+                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="product3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#FFE0EC;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#FFC0CB;stop-opacity:1" />
+                                </linearGradient>
+                                <radialGradient id="berry3">
+                                    <stop offset="0%" style="stop-color:#FF4081;stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:#C71585;stop-opacity:1" />
+                                </radialGradient>
+                            </defs>
+                            <rect width="400" height="300" fill="url(#product3Grad)"/>
+                            <circle cx="200" cy="130" r="75" fill="url(#berry3)" filter="drop-shadow(0 8px 15px rgba(0,0,0,0.2))"/>
+                            <path d="M 172 50 Q 164 32 172 24 Q 180 20 187 32 Q 195 15 202 24 Q 210 32 202 50 Z" fill="#2D5016"/>
+                            <text x="200" y="280" font-size="32" text-anchor="middle" fill="#C71585" font-weight="bold" opacity="0.5">500g</text>
+                        </svg>
+                    </div>
                     <div class="product-info">
-                        <h3>✨ 松露草莓禮盒</h3>
+                        <h3>✨松露草莓禮盒</h3>
                         <p class="product-spec">500g 特選松露草莓</p>
                         <ul class="product-features">
                             <li>✓ 限定特選品種</li>
@@ -395,7 +383,67 @@
         <div class="container">
             <h2>苗栗大湖鄉的故事</h2>
             <div class="story-content">
-                <div class="story-image"></div>
+                <div class="story-image">
+                    <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="fieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" style="stop-color:#90EE90;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#3CB371;stop-opacity:1" />
+                            </linearGradient>
+                            <radialGradient id="strawberryFarm">
+                                <stop offset="0%" style="stop-color:#FF4081;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#C71585;stop-opacity:1" />
+                            </radialGradient>
+                        </defs>
+                        <!-- Sky -->
+                        <rect width="600" height="200" fill="url(#skyGradient)"/>
+                        <!-- Field -->
+                        <rect y="200" width="600" height="200" fill="url(#fieldGradient)"/>
+                        
+                        <!-- Rows of strawberry plants -->
+                        <g id="row1">
+                            <circle cx="80" cy="250" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="150" cy="250" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="220" cy="250" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="290" cy="250" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="360" cy="250" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="430" cy="250" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="500" cy="250" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="570" cy="250" r="15" fill="url(#strawberryFarm)"/>
+                        </g>
+                        <g id="row2">
+                            <circle cx="80" cy="310" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="150" cy="310" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="220" cy="310" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="290" cy="310" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="360" cy="310" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="430" cy="310" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="500" cy="310" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="570" cy="310" r="15" fill="url(#strawberryFarm)"/>
+                        </g>
+                        <g id="row3">
+                            <circle cx="80" cy="370" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="150" cy="370" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="220" cy="370" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="290" cy="370" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="360" cy="370" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="430" cy="370" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="500" cy="370" r="15" fill="url(#strawberryFarm)"/>
+                            <circle cx="570" cy="370" r="15" fill="url(#strawberryFarm)"/>
+                        </g>
+                        
+                        <!-- Sun -->
+                        <circle cx="500" cy="50" r="40" fill="#FFD700" filter="drop-shadow(0 5px 10px rgba(0,0,0,0.1))"/>
+                        
+                        <!-- Mountains in background -->
+                        <polygon points="50,150 150,50 250,150" fill="#90EE90" opacity="0.7"/>
+                        <polygon points="350,180 450,70 550,180" fill="#7CFC00" opacity="0.6"/>
+                    </svg>
+                </div>
                 <div class="story-text">
                     <h3>來自山城的用心</h3>
                     <p>苗栗大湖鄉，位於台灣西部山區，是台灣最知名的草莓產區。這裡的農民世代耕種，對土地有著深厚的感情。</p>
