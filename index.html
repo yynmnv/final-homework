@@ -14,7 +14,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="大湖鄉無農藥草莓 - 給孩子最天然的健康點心">
     <meta property="og:description" content="100%產地透明的新鮮草莓直送，守護您的孩子健康。">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1464454709131-ffd692591ee5?w=800&h=400&fit=crop">
+    <meta property="og:image" content="">
     <meta property="og:image:alt" content="苗栗大湖鄉無農藥草莓">
     <meta property="og:url" content="">
     <meta property="og:site_name" content="大湖鄉草莓直送">
@@ -27,18 +27,140 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75'>🍓</text></svg>">
     
-    <!-- Google Analytics 4 Gtag Placeholder -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        
-        // Replace G-XXXXXXXXXX with your GA4 Property ID
-        // gtag('config', 'G-XXXXXXXXXX');
-    </script>
-    
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hero Image with CSS */
+        .hero-image {
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+            background: linear-gradient(135deg, #FFE0EC 0%, #FFC0CB 50%, #FF69B4 100%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle at 30% 30%, #FF1493, #C71585);
+            border-radius: 50%;
+            top: 20%;
+            left: 25%;
+            box-shadow: 0 10px 25px rgba(199, 21, 133, 0.4);
+        }
+
+        .hero-image::after {
+            content: '🍓 🍓 🍓';
+            position: absolute;
+            font-size: 4rem;
+            z-index: 2;
+        }
+
+        /* Product Images */
+        .product-image {
+            background: linear-gradient(135deg, #FFE0EC 0%, #FFC0CB 100%);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 250px;
+        }
+
+        .product-image::before {
+            content: '';
+            position: absolute;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle at 40% 40%, #FF1493, #C71585);
+            border-radius: 50%;
+            opacity: 0.9;
+        }
+
+        .product-image::after {
+            content: '🍓';
+            position: absolute;
+            font-size: 5rem;
+            z-index: 2;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+        }
+
+        /* Story Image */
+        .story-image {
+            background: linear-gradient(180deg, #90EE90 0%, #7CFC00 50%, #32CD32 100%);
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .story-image::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                repeating-linear-gradient(90deg, transparent 0, transparent 40px, rgba(255,255,255,0.1) 40px, rgba(255,255,255,0.1) 80px),
+                repeating-linear-gradient(0deg, transparent 0, transparent 50px, rgba(0,0,0,0.05) 50px, rgba(0,0,0,0.05) 100px);
+        }
+
+        .story-image::after {
+            content: '🌾 🍓 🌾';
+            position: absolute;
+            font-size: 4rem;
+            z-index: 2;
+            text-align: center;
+            letter-spacing: 1rem;
+        }
+
+        /* Featured Product Highlight */
+        .product-card.featured .product-image {
+            position: relative;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-image {
+                height: 250px;
+            }
+
+            .hero-image::before {
+                width: 120px;
+                height: 120px;
+            }
+
+            .product-image::after {
+                font-size: 3rem;
+            }
+
+            .story-image::after {
+                font-size: 3rem;
+                letter-spacing: 0.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -65,11 +187,7 @@
         <div class="hero-content">
             <h1 class="hero-title">給孩子最天然的健康選擇</h1>
             <p class="hero-subtitle">苗栗大湖鄉新鮮無農藥草莓 | 100% 產地透明 | 安心直送到家</p>
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1464454709131-ffd692591ee5?w=800&h=400&fit=crop" 
-                     alt="苗栗大湖鄉草莓農場 - 新鮮草莓田園風景"
-                     loading="lazy">
-            </div>
+            <div class="hero-image"></div>
             <a href="#products" class="cta-button primary" data-event="hero_cta">探索我們的草莓</a>
         </div>
     </section>
@@ -148,11 +266,7 @@
             <h2>我們的草莓商品</h2>
             <div class="products-grid">
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1469022563149-aa64dbd37dae?w=400&h=300&fit=crop" 
-                             alt="新鮮飽滿的紅色草莓禮盒 - 300g"
-                             loading="lazy">
-                    </div>
+                    <div class="product-image"></div>
                     <div class="product-info">
                         <h3>🍓 鮮採新鮮草莓禮盒</h3>
                         <p class="product-spec">300g 新鮮草莓</p>
@@ -172,11 +286,7 @@
 
                 <div class="product-card featured">
                     <div class="badge">暢銷推薦</div>
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1587393855258-915eaae4fbf7?w=400&h=300&fit=crop" 
-                             alt="多盒新鮮草莓禮盒展示 - 家庭優惠組合 600g"
-                             loading="lazy">
-                    </div>
+                    <div class="product-image"></div>
                     <div class="product-info">
                         <h3>👨‍👩‍👧‍👦 家庭優惠組合</h3>
                         <p class="product-spec">600g 新鮮草莓</p>
@@ -196,11 +306,7 @@
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1571170604063-ebf405882628?w=400&h=300&fit=crop" 
-                             alt="新鮮採收的草莓特寫 - 甜度 13 度以上松露草莓"
-                             loading="lazy">
-                    </div>
+                    <div class="product-image"></div>
                     <div class="product-info">
                         <h3>✨ 松露草莓禮盒</h3>
                         <p class="product-spec">500g 特選松露草莓</p>
@@ -289,11 +395,7 @@
         <div class="container">
             <h2>苗栗大湖鄉的故事</h2>
             <div class="story-content">
-                <div class="story-image">
-                    <img src="https://images.unsplash.com/photo-1490822821350-45f439a54c18?w=600&h=400&fit=crop" 
-                         alt="苗栗大湖鄉草莓農場風景 - 大片綠色草莓植株在塑膠布上生長"
-                         loading="lazy">
-                </div>
+                <div class="story-image"></div>
                 <div class="story-text">
                     <h3>來自山城的用心</h3>
                     <p>苗栗大湖鄉，位於台灣西部山區，是台灣最知名的草莓產區。這裡的農民世代耕種，對土地有著深厚的感情。</p>
