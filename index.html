@@ -29,29 +29,30 @@
     
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Hero Image SVG */
-        .hero-image svg {
+        /* Hero Image */
+        .hero-image img {
             width: 100%;
             max-width: 600px;
-            height: 300px;
+            height: auto;
             margin-bottom: 2rem;
             border-radius: 8px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
             display: block;
         }
 
-        /* Product Image SVG */
-        .product-image svg {
+        /* Product Image */
+        .product-image img {
             width: 100%;
             height: 250px;
+            object-fit: cover;
             border-radius: 8px;
             overflow: hidden;
         }
 
-        /* Story Image SVG */
-        .story-image svg {
+        /* Story Image */
+        .story-image img {
             width: 100%;
-            height: 300px;
+            height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
         }
@@ -61,7 +62,7 @@
             50% { transform: translateY(-10px); }
         }
 
-        .product-card.featured svg {
+        .product-card.featured .product-image {
             animation: bounce 2s ease-in-out infinite;
         }
     </style>
@@ -92,36 +93,7 @@
             <h1 class="hero-title">給孩子最天然的健康選擇</h1>
             <p class="hero-subtitle">苗栗大湖鄉新鮮無農藥草莓 | 100% 產地透明 | 安心直送到家</p>
             <div class="hero-image">
-                <svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="margin: 0 auto; display: block;">
-                    <!-- Background gradient -->
-                    <defs>
-                        <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#FFE0EC;stop-opacity:1" />
-                            <stop offset="50%" style="stop-color:#FFC0CB;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#FF69B4;stop-opacity:1" />
-                        </linearGradient>
-                        <radialGradient id="strawberry1" cx="35%" cy="35%">
-                            <stop offset="0%" style="stop-color:#FF4081;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#C71585;stop-opacity:1" />
-                        </radialGradient>
-                    </defs>
-                    <rect width="800" height="400" fill="url(#heroGradient)"/>
-                    
-                    <!-- Strawberry 1 (Left) -->
-                    <circle cx="200" cy="150" r="80" fill="url(#strawberry1)" filter="drop-shadow(0 10px 20px rgba(0,0,0,0.2))"/>
-                    <path d="M 170 70 Q 160 50 170 40 Q 180 35 190 45 Q 200 30 210 40 Q 220 50 210 70 Z" fill="#2D5016"/>
-                    
-                    <!-- Strawberry 2 (Center) - MAIN -->
-                    <circle cx="400" cy="180" r="90" fill="url(#strawberry1)" filter="drop-shadow(0 10px 20px rgba(0,0,0,0.2))"/>
-                    <path d="M 365 85 Q 355 65 365 55 Q 375 50 385 60 Q 395 45 405 55 Q 415 65 405 85 Z" fill="#2D5016"/>
-                    
-                    <!-- Strawberry 3 (Right) -->
-                    <circle cx="600" cy="120" r="70" fill="url(#strawberry1)" filter="drop-shadow(0 10px 20px rgba(0,0,0,0.2))"/>
-                    <path d="M 575 45 Q 565 25 575 15 Q 585 10 595 20 Q 605 5 615 15 Q 625 25 615 45 Z" fill="#2D5016"/>
-                    
-                    <!-- Decorative text -->
-                    <text x="400" y="350" font-size="48" text-anchor="middle" fill="#C71585" font-weight="bold" opacity="0.3">新鮮採收</text>
-                </svg>
+                <img src="images/LINE_ALBUM_六合草莓園_240217_3.jpg" alt="苗栗大湖鄉新鮮無農藥草莓" loading="lazy">
             </div>
             <a href="#products" class="cta-button primary" data-event="hero_cta">探索我們的草莓</a>
         </div>
@@ -202,22 +174,7 @@
             <div class="products-grid">
                 <div class="product-card">
                     <div class="product-image">
-                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="product1Grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FFE0EC;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#FFC0CB;stop-opacity:1" />
-                                </linearGradient>
-                                <radialGradient id="berry1">
-                                    <stop offset="0%" style="stop-color:#FF4081;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#C71585;stop-opacity:1" />
-                                </radialGradient>
-                            </defs>
-                            <rect width="400" height="300" fill="url(#product1Grad)"/>
-                            <circle cx="200" cy="150" r="70" fill="url(#berry1)" filter="drop-shadow(0 8px 15px rgba(0,0,0,0.2))"/>
-                            <path d="M 175 80 Q 168 65 175 58 Q 182 55 188 65 Q 195 50 202 58 Q 209 65 202 80 Z" fill="#2D5016"/>
-                            <text x="200" y="280" font-size="32" text-anchor="middle" fill="#C71585" font-weight="bold" opacity="0.5">300g</text>
-                        </svg>
+                        <img src="images/article-684aa82f5fa97.jpg" alt="鮮採新鮮草莓禮盒" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>🍓 鮮採新鮮草莓禮盒</h3>
@@ -239,24 +196,7 @@
                 <div class="product-card featured">
                     <div class="badge">暢銷推薦</div>
                     <div class="product-image">
-                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="product2Grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FFE0EC;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#FFC0CB;stop-opacity:1" />
-                                </linearGradient>
-                                <radialGradient id="berry2">
-                                    <stop offset="0%" style="stop-color:#FF4081;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#C71585;stop-opacity:1" />
-                                </radialGradient>
-                            </defs>
-                            <rect width="400" height="300" fill="url(#product2Grad)"/>
-                            <circle cx="150" cy="120" r="60" fill="url(#berry2)" filter="drop-shadow(0 8px 15px rgba(0,0,0,0.2))"/>
-                            <path d="M 130 60 Q 125 48 130 42 Q 136 40 141 49 Q 147 35 152 42 Q 158 48 152 60 Z" fill="#2D5016"/>
-                            <circle cx="270" cy="160" r="65" fill="url(#berry2)" filter="drop-shadow(0 8px 15px rgba(0,0,0,0.2))"/>
-                            <path d="M 248 95 Q 242 80 248 73 Q 254 70 260 80 Q 267 63 273 73 Q 279 80 273 95 Z" fill="#2D5016"/>
-                            <text x="200" y="280" font-size="32" text-anchor="middle" fill="#C71585" font-weight="bold" opacity="0.5">600g</text>
-                        </svg>
+                        <img src="images/fotojet-3-67244f3a89dd9.avif" alt="家庭優惠組合" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>👨‍👩‍👧‍👦 家庭優惠組合</h3>
@@ -278,22 +218,7 @@
 
                 <div class="product-card">
                     <div class="product-image">
-                        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="product3Grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FFE0EC;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#FFC0CB;stop-opacity:1" />
-                                </linearGradient>
-                                <radialGradient id="berry3">
-                                    <stop offset="0%" style="stop-color:#FF4081;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#C71585;stop-opacity:1" />
-                                </radialGradient>
-                            </defs>
-                            <rect width="400" height="300" fill="url(#product3Grad)"/>
-                            <circle cx="200" cy="130" r="75" fill="url(#berry3)" filter="drop-shadow(0 8px 15px rgba(0,0,0,0.2))"/>
-                            <path d="M 172 50 Q 164 32 172 24 Q 180 20 187 32 Q 195 15 202 24 Q 210 32 202 50 Z" fill="#2D5016"/>
-                            <text x="200" y="280" font-size="32" text-anchor="middle" fill="#C71585" font-weight="bold" opacity="0.5">500g</text>
-                        </svg>
+                        <img src="images/fresh-ripe-summer-organic-strawberry-on-green-royalty-free-image-1741760299.avif" alt="松露草莓禮盒" loading="lazy">
                     </div>
                     <div class="product-info">
                         <h3>✨松露草莓禮盒</h3>
@@ -384,65 +309,7 @@
             <h2>苗栗大湖鄉的故事</h2>
             <div class="story-content">
                 <div class="story-image">
-                    <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <linearGradient id="skyGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#87CEEB;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#E0F6FF;stop-opacity:1" />
-                            </linearGradient>
-                            <linearGradient id="fieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                                <stop offset="0%" style="stop-color:#90EE90;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#3CB371;stop-opacity:1" />
-                            </linearGradient>
-                            <radialGradient id="strawberryFarm">
-                                <stop offset="0%" style="stop-color:#FF4081;stop-opacity:1" />
-                                <stop offset="100%" style="stop-color:#C71585;stop-opacity:1" />
-                            </radialGradient>
-                        </defs>
-                        <!-- Sky -->
-                        <rect width="600" height="200" fill="url(#skyGradient)"/>
-                        <!-- Field -->
-                        <rect y="200" width="600" height="200" fill="url(#fieldGradient)"/>
-                        
-                        <!-- Rows of strawberry plants -->
-                        <g id="row1">
-                            <circle cx="80" cy="250" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="150" cy="250" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="220" cy="250" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="290" cy="250" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="360" cy="250" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="430" cy="250" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="500" cy="250" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="570" cy="250" r="15" fill="url(#strawberryFarm)"/>
-                        </g>
-                        <g id="row2">
-                            <circle cx="80" cy="310" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="150" cy="310" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="220" cy="310" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="290" cy="310" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="360" cy="310" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="430" cy="310" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="500" cy="310" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="570" cy="310" r="15" fill="url(#strawberryFarm)"/>
-                        </g>
-                        <g id="row3">
-                            <circle cx="80" cy="370" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="150" cy="370" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="220" cy="370" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="290" cy="370" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="360" cy="370" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="430" cy="370" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="500" cy="370" r="15" fill="url(#strawberryFarm)"/>
-                            <circle cx="570" cy="370" r="15" fill="url(#strawberryFarm)"/>
-                        </g>
-                        
-                        <!-- Sun -->
-                        <circle cx="500" cy="50" r="40" fill="#FFD700" filter="drop-shadow(0 5px 10px rgba(0,0,0,0.1))"/>
-                        
-                        <!-- Mountains in background -->
-                        <polygon points="50,150 150,50 250,150" fill="#90EE90" opacity="0.7"/>
-                        <polygon points="350,180 450,70 550,180" fill="#7CFC00" opacity="0.6"/>
-                    </svg>
+                    <img src="images/id13616548-543103-600x400.jpg" alt="苗栗大湖鄉草莓農場" loading="lazy">
                 </div>
                 <div class="story-text">
                     <h3>來自山城的用心</h3>
@@ -496,7 +363,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>是的，我們的草莓 100% 無農藥。每批商品都通過農業藥物毒物試驗所檢驗，附上正式認證證明。您可以掃描商品上的 QR Code，查詢完整的檢驗報告與產地資訊。</p>
+                        <p>是的，我們的草莓 100% 無農藥。每批商品都通過農業藥物毒物試驗所檢驗，附上正式認證證明。您可以掃描商品上的 QR Code，查詢完整認證資訊。</p>
                     </div>
                 </div>
 
@@ -506,7 +373,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>不會。我們採用冷鏈配送，從採收、包裝到運送，全程保持 2-4°C 的溫度。與冷鏈廠商合作，確保次日上午送達。如果到貨時發現任何問題，我們無條件退款或重新寄送。</p>
+                        <p>不會。我們採用冷鏈配送，從採收、包裝到運送，全程保持 2-4°C 的溫度。與冷鏈廠商合作，確保次日上午送達。如果到貨時發現問題，我們提供無條件退款。</p>
                     </div>
                 </div>
 
@@ -516,7 +383,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>目前我們配送範圍涵蓋台灣本島（北中南東）。離島地區如澎湖、金門、馬祖可以詢價，運費會另計。建議詢價時提供您的地址，我們會立即評估配送可行性。</p>
+                        <p>目前我們配送範圍涵蓋台灣本島（北中南東）。離島地區如澎湖、金門、馬祖可以詢價，運費會另計。建議詢價時提供您的地址和運送時間需求。</p>
                     </div>
                 </div>
 
@@ -543,7 +410,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>可以！我們提供精美禮盒包裝和賀狀服務。訂購時可在表單備註欄註明收禮人姓名和祝賀詞，我們會一起包裝寄出。非常適合送給長輩、好友或公司客戶。</p>
+                        <p>可以！我們提供精美禮盒包裝和賀狀服務。訂購時可在表單備註欄註明收禮人姓名和祝賀詞，我們會一起包裝寄出。非常適合送給親朋好友和公司客戶。</p>
                     </div>
                 </div>
 
@@ -553,7 +420,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>建議冷藏保存，可保持新鮮 3-5 天。由於我們的草莓不使用防腐劑，請盡早食用以享受最佳風味。如果無法立即食用，可放入冷凍庫保存長達 3 個月，適合做成果醬或冰淇淋。</p>
+                        <p>建議冷藏保存，可保持新鮮 3-5 天。由於我們的草莓不使用防腐劑，請盡早食用以享受最佳風味。如果無法立即食用，可放入冷凍，可保存 3-6 個月。</p>
                     </div>
                 </div>
 
@@ -563,7 +430,7 @@
                         <span class="faq-icon">+</span>
                     </button>
                     <div class="faq-answer">
-                        <p>可以！無農藥草莓非常適合寶寶食用。建議 6 個月以上的寶寶可以開始嘗試（需切碎或做成果泥）。由於是新鮮水果，初次嘗試時建議少量，觀察寶寶是否有過敏反應。</p>
+                        <p>可以！無農藥草莓非常適合寶寶食用。建議 6 個月以上的寶寶可以開始嘗試（需切碎或做成果泥）。由於是新鮮水果，初次嘗試建議少量，並觀察是否有過敏反應。</p>
                     </div>
                 </div>
 
